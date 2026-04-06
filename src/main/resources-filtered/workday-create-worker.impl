@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
+  <implementationId>${workday-create-worker.impl.id}</implementationId>
+  <implementationVersion>${workday-create-worker.impl.version}</implementationVersion>
+  <definitionId>${workday-create-worker.def.id}</definitionId>
+  <definitionVersion>${workday-create-worker.def.version}</definitionVersion>
+  <implementationClassname>${workday-create-worker.main-class}</implementationClassname>
+  <hasSources>false</hasSources>
+  <description>Workday HCM Create Worker connector implementation</description>
+${connector-dependencies}
+</implementation:connectorImplementation>

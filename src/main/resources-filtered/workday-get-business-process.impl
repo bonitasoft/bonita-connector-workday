@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
+  <implementationId>${workday-get-business-process.impl.id}</implementationId>
+  <implementationVersion>${workday-get-business-process.impl.version}</implementationVersion>
+  <definitionId>${workday-get-business-process.def.id}</definitionId>
+  <definitionVersion>${workday-get-business-process.def.version}</definitionVersion>
+  <implementationClassname>${workday-get-business-process.main-class}</implementationClassname>
+  <hasSources>false</hasSources>
+  <description>Workday HCM Get Business Process connector implementation</description>
+${connector-dependencies}
+</implementation:connectorImplementation>

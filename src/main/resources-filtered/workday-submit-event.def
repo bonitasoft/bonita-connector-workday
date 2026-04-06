@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
+
+  <id>${workday-submit-event.def.id}</id>
+  <version>${workday-submit-event.def.version}</version>
+  <icon>workday.png</icon>
+  <category icon="workday.png" id="Workday HCM"/>
+
+  <input name="clientId" type="java.lang.String" mandatory="true"/>
+  <input name="clientSecret" type="java.lang.String" mandatory="true"/>
+  <input name="refreshToken" type="java.lang.String" mandatory="true"/>
+  <input name="tenantAlias" type="java.lang.String" mandatory="true"/>
+  <input name="basePath" type="java.lang.String" mandatory="false"/>
+  <input name="tokenEndpoint" type="java.lang.String" mandatory="false"/>
+  <input name="connectTimeout" type="java.lang.Integer" mandatory="false" defaultValue="30000"/>
+  <input name="readTimeout" type="java.lang.Integer" mandatory="false" defaultValue="60000"/>
+  <input name="eventType" type="java.lang.String" mandatory="true"/>
+  <input name="workerId" type="java.lang.String" mandatory="true"/>
+  <input name="eventData" type="java.lang.String" mandatory="true"/>
+  <input name="effectiveDate" type="java.lang.String" mandatory="true"/>
+  <input name="reason" type="java.lang.String" mandatory="false"/>
+
+  <output name="processId" type="java.lang.String"/>
+  <output name="processStatus" type="java.lang.String"/>
+  <output name="responseBody" type="java.lang.String"/>
+  <output name="success" type="java.lang.Boolean"/>
+  <output name="errorMessage" type="java.lang.String"/>
+
+  <page id="connectionPage">
+    <widget xsi:type="definition:Text" id="clientIdWidget" inputName="clientId"/>
+    <widget xsi:type="definition:Password" id="clientSecretWidget" inputName="clientSecret"/>
+    <widget xsi:type="definition:Password" id="refreshTokenWidget" inputName="refreshToken"/>
+    <widget xsi:type="definition:Text" id="tenantAliasWidget" inputName="tenantAlias"/>
+    <widget xsi:type="definition:Text" id="basePathWidget" inputName="basePath"/>
+    <widget xsi:type="definition:Text" id="tokenEndpointWidget" inputName="tokenEndpoint"/>
+    <widget xsi:type="definition:Text" id="connectTimeoutWidget" inputName="connectTimeout"/>
+    <widget xsi:type="definition:Text" id="readTimeoutWidget" inputName="readTimeout"/>
+  </page>
+  <page id="operationPage">
+    <widget xsi:type="definition:Select" id="eventTypeWidget" inputName="eventType">
+      <items>Compensation_Change</items>
+      <items>Termination</items>
+      <items>Transfer</items>
+      <items>Promotion</items>
+      <items>Job_Change</items>
+    </widget>
+    <widget xsi:type="definition:Text" id="workerIdWidget" inputName="workerId"/>
+    <widget xsi:type="definition:TextArea" id="eventDataWidget" inputName="eventData"/>
+    <widget xsi:type="definition:Text" id="effectiveDateWidget" inputName="effectiveDate"/>
+    <widget xsi:type="definition:Text" id="reasonWidget" inputName="reason"/>
+  </page>
+</definition:ConnectorDefinition>
